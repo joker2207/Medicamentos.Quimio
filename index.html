@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Envío a Google Sheets</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="data:image/png;base64,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"
+                alt="Logo Clínica de los Rios">
+            <img src="https://inford.com.do/wp-content/uploads/2022/02/dia-mundial-cancer.jpg"
+                alt="Logo Lucha contra el Cáncer">
+        </div>
+        <h1>Formulario de Envío</h1>
+        <form id="myForm" onsubmit="submitForm(event)">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br>
+
+            <label for="tipo_documento">Tipo de documento:</label>
+            <select id="tipo_documento" name="tipo_documento" required>
+                <option value="Registro_civil">Registro Civil</option>
+                <option value="Tarjeta_de_Identidad">Tarjeta de Indentidad</option>
+                <option value="Cedula">Cedula</option>
+            </select><br>
+
+            <label for="numero_documento">Número de documento:</label>
+            <input type="text" id="numero_documento" name="numero_documento" required><br>
+
+            <label for="eps">EPS:</label>
+            <input type="text" id="eps" name="eps" required><br>
+
+            <label for="medicamento">Medicamento:</label>
+            <input type="text" id="medicamento" name="medicamento" required><br>
+
+            <label for="quimioterapia">Quimioterapia:</label>
+            <input type="text" id="quimioterapia" name="quimioterapia" required><br>
+
+            <label for="tipo_medicamento">Tipo de medicamento:</label>
+            <input type="text" id="tipo_medicamento" name="tipo_medicamento" required><br>
+
+            <label for="fecha_entrega">Fecha de entrega o colocación de medicamento:</label>
+            <input type="date" id="fecha_entrega" name="fecha_entrega" required><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Ever Enrique Navarro Figueroa 2023</p>
+            <div class="contact-info">
+                <a href="https://wa.me/573218402147"><i class="fab fa-whatsapp"></i> Desde celular: +57 321 8402147</a>
+                <p>Marca 6056889730 y sigue las instrucciones de nuestro asistente virtual</p>
+                <p>Correo: citas@clinicadelosrios.com</p>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/clinicadelosriosmagangue/?locale=es_LA" target="_blank"
+                    class="facebook-icon"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/clinicadelosriosmagangue/?hl=es" target="_blank"
+                    class="instagram-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
